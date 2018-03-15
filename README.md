@@ -1,6 +1,5 @@
 # Proxy Server
- An HTTP proxy server implemented via python socket programming
-with caching
+ An HTTP proxy server implemented via python socket programming with caching fucntionality
 ## Description
 - ![proxy.py](/proxy.py ) is the main proxy file
 - Proxy runs on port 20000
@@ -21,28 +20,28 @@ with caching
 `python proxy.py `
 
 ### Server
-- run server in ![server](/server ) directory
-- python server.py to run server on port 19999
+- Run server in ![server](/server ) directory
+- `python server.py` to run server on port 19999
 
 ### Client
-- start the server first by going into the server directory and
+- Start the server first by going into the server directory and
 type the command python "server.py".
-- start the proxyserver by going into the proxyserver directory
+- Start the proxyserver by going into the proxyserver directory
 and type the command python "proxyserver.py".
-- the proxyserver now acts as a proxy to all the network actions
+- The proxyserver now acts as a proxy to all the network actions
 requesting the proxy through the port 12345
-- curl request can be sent as client request and get the
+- Curl request can be sent as client request and get the
 response.
  `curl --request GET --proxy 127.0.0.1:20000 --local-port
 20001-20010 127.0.0.1:19999/<"filename">`
-- this request will ask 1.data file from server 127.0.0.1/19999
+- This request will ask 1.data file from server 127.0.0.1/19999
 by GET request via proxy 127.0.0.1/20000 using one of the ports
 in range 20001-20010 on localhost.
-- if the file already exists in the cache of proxy server and is
+- Yf the file already exists in the cache of proxy server and is
 not changed in the server then it is directly served to the
-client     by the proxy itself i.e the server is not requested
+client by the proxy itself i.e the server is not requested
 for the file. If the file was updated in the server then the
-updated file is      downloaded and stored in the cache of proxy
+updated file is downloaded and stored in the cache of proxy
 server
 - If the file already doesn't exist in the cache of proxy server
 then it is downloaded from the server by
